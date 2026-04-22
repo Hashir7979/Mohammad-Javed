@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Smart People Stay Broke — From Degree to Dollars | Mohammad Javed</title>
+  <meta name="description" content="Intelligence, Emotional Control, and the Missing Science of Wealth. A rigorous framework for why intelligent professionals remain financially constrained — and how to redesign financial freedom through ownership, structure, and time." />
+  <meta name="author" content="Mohammad Javed" />
+  <meta name="keywords" content="Why Smart People Stay Broke, Mohammad Javed, financial freedom, wealth psychology, ownership, assets, financial intelligence" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="book" />
+  <meta property="og:title" content="Why Smart People Stay Broke — From Degree to Dollars" />
+  <meta property="og:description" content="Intelligence, Emotional Control, and the Missing Science of Wealth. A rigorous framework by Mohammad Javed." />
+  <meta property="og:image" content="images/launch-1.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why Smart People Stay Broke" />
+  <meta name="twitter:description" content="Intelligence, Emotional Control, and the Missing Science of Wealth." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: {
+              950: '#07070a',
+              900: '#0b0b10',
+              800: '#111118',
+              700: '#17171f',
+              600: '#1f1f2a',
+            },
+            gold: {
+              50:  '#faf5e6',
+              100: '#f1e5bf',
+              200: '#e4d293',
+              300: '#d4bd66',
+              400: '#c9a961',
+              500: '#b8923f',
+              600: '#9a7830',
+              700: '#7a5e24',
+            },
+          },
+          letterSpacing: {
+            'widest-2': '0.24em',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background: #07070a;
+      color: #e7e5e4;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Ambient glow background */
+    .bg-grain::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(1000px 600px at 85% -10%, rgba(201,169,97,0.10), transparent 60%),
+        radial-gradient(800px 600px at -10% 20%, rgba(201,169,97,0.06), transparent 60%),
+        radial-gradient(900px 700px at 50% 110%, rgba(201,169,97,0.05), transparent 60%);
+      z-index: 0;
+    }
+    .bg-grain::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.75  0 0 0 0 0.45  0 0 0 0.035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      opacity: 0.35;
+      mix-blend-mode: overlay;
+      z-index: 0;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f1e5bf 0%, #d4bd66 40%, #c9a961 60%, #9a7830 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hairline {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,169,97,0.45), transparent);
+    }
+
+    .btn-primary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.95rem 1.75rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      color: #0b0b10;
+      background: linear-gradient(135deg, #e4d293 0%, #c9a961 55%, #9a7830 100%);
+      border: 1px solid rgba(201,169,97,0.6);
+      border-radius: 999px;
+      transition: transform 200ms ease, box-shadow 300ms ease, filter 200ms ease;
+      box-shadow: 0 10px 30px -10px rgba(201,169,97,0.35), inset 0 0 0 1px rgba(255,255,255,0.15);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 16px 40px -12px rgba(201,169,97,0.55), inset 0 0 0 1px rgba(255,255,255,0.2);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.5rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #e4d293;
+      border: 1px solid rgba(201,169,97,0.3);
+      border-radius: 999px;
+      transition: all 200ms ease;
+      background: rgba(255,255,255,0.02);
+    }
+    .btn-ghost:hover {
+      border-color: rgba(201,169,97,0.6);
+      background: rgba(201,169,97,0.08);
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #c9a961;
+    }
+
+    /* Card */
+    .card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      transition: border-color 300ms ease, transform 400ms ease, background 300ms ease;
+    }
+    .card:hover {
+      border-color: rgba(201,169,97,0.35);
+      transform: translateY(-3px);
+      background: linear-gradient(180deg, rgba(201,169,97,0.05), rgba(255,255,255,0.015));
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(201,169,97,0.25), transparent 40%, transparent 60%, rgba(201,169,97,0.1));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+              mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 300ms ease;
+      pointer-events: none;
+    }
+    .card:hover::before { opacity: 1; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 900ms ease, transform 900ms cubic-bezier(0.2,0.7,0.2,1);
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Book mockup */
+    .book-wrap {
+      perspective: 1800px;
+    }
+    .book {
+      position: relative;
+      width: 260px;
+      height: 380px;
+      transform-style: preserve-3d;
+      transform: rotateY(-22deg) rotateX(4deg);
+      transition: transform 700ms cubic-bezier(0.2,0.7,0.2,1);
+      filter: drop-shadow(40px 50px 60px rgba(0,0,0,0.6));
+    }
+    .book:hover { transform: rotateY(-34deg) rotateX(2deg); }
+
+    /* Back board of the book */
+    .book-back {
+      position: absolute;
+      inset: 0;
+      transform: translateZ(-6px);
+      background:
+        radial-gradient(120% 80% at 80% 90%, rgba(201,169,97,0.10), transparent 55%),
+        linear-gradient(160deg, #0c0c14 0%, #06060a 70%);
+      border: 1px solid rgba(201,169,97,0.22);
+      border-radius: 4px 10px 10px 4px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+    }
+
+    /* Page block sandwiched between the back board and the front cover */
+    .book-pages {
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 12px;
+      right: 6px;
+      transform: translateZ(-2px);
+      background:
+        repeating-linear-gradient(180deg, rgba(0,0,0,0.05) 0 1px, transparent 1px 3px),
+        linear-gradient(180deg, #f5ead0 0%, #e4d293 55%, #c9a961 100%);
+      border-radius: 2px 6px 6px 2px;
+      box-shadow:
+        inset -5px 0 10px rgba(0,0,0,0.18),
+        inset 0 0 0 1px rgba(255,255,255,0.2);
+      overflow: hidden;
+    }
+    .book-pages::before {
+      content: "";
+      position: absolute;
+      inset: 14% 14% 14% 22%;
+      background: repeating-linear-gradient(180deg, rgba(11,11,16,0.55) 0 1.5px, transparent 1.5px 10px);
+      opacity: 0.55;
+    }
+    .book-pages::after {
+      content: "";
+      position: absolute;
+      left: 15%; right: 18%;
+      top: 10%;
+      height: 8px;
+      background: linear-gradient(90deg, transparent, rgba(11,11,16,0.7), transparent);
+      border-radius: 2px;
+    }
+
+    /* Hinged wrapper that swings the front cover open */
+    .book-hinge {
+      position: absolute;
+      inset: 0;
+      transform-origin: left center;
+      transform: rotateY(0deg);
+      transform-style: preserve-3d;
+      transition: transform 900ms cubic-bezier(0.2,0.7,0.2,1);
+      will-change: transform;
+    }
+    @media (hover: hover) {
+      .book:hover .book-hinge { transform: rotateY(-118deg); }
+    }
+
+    .book .cover {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(120% 80% at 20% 10%, rgba(201,169,97,0.18), transparent 50%),
+        linear-gradient(160deg, #14141c 0%, #0a0a12 70%);
+      border: 1px solid rgba(201,169,97,0.35);
+      border-radius: 4px 10px 10px 4px;
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    .book .cover::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 10px;
+      background: linear-gradient(90deg, rgba(0,0,0,0.6), transparent);
+      border-radius: 4px 0 0 4px;
+    }
+    .book .cover::after {
+      content: "";
+      position: absolute;
+      left: 14px; top: 8px; bottom: 8px;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(201,169,97,0.3), transparent);
+    }
+
+    /* Author photo frames */
+    .portrait {
+      position: relative;
+      border-radius: 9999px;
+      padding: 6px;
+      background: conic-gradient(from 140deg, rgba(201,169,97,0.7), rgba(201,169,97,0.1), rgba(201,169,97,0.6));
+    }
+    .portrait > .inner {
+      border-radius: 9999px;
+      overflow: hidden;
+      background: #0b0b10;
+    }
+    .portrait-rect {
+      position: relative;
+      border-radius: 14px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(201,169,97,0.5), rgba(255,255,255,0.02) 40%, rgba(201,169,97,0.3));
+    }
+    .portrait-rect > .inner {
+      border-radius: 13px;
+      overflow: hidden;
+      background: #0b0b10;
+    }
+
+    /* Fallback placeholder when image is missing */
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(201,169,97,0.18), transparent 60%),
+        linear-gradient(135deg, #14141c, #0a0a12);
+      color: rgba(201,169,97,0.5);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    /* Number marker */
+    .numeral {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(201,169,97,0.55);
+    }
+
+    /* Header */
+    .nav-blur {
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      backdrop-filter: saturate(140%) blur(14px);
+      background: rgba(7,7,10,0.6);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Input */
+    .email-input {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 999px;
+      padding: 0.9rem 1.25rem;
+      color: #f5f5f5;
+      font-size: 0.95rem;
+      width: 100%;
+      transition: border-color 200ms ease, background 200ms ease;
+    }
+    .email-input::placeholder { color: rgba(255,255,255,0.35); }
+    .email-input:focus {
+      outline: none;
+      border-color: rgba(201,169,97,0.5);
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* Quote */
+    blockquote.pull {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.3;
+      color: #f1e5bf;
+    }
+
+    /* Utility helpers (replace inline styles) */
+    .hairline-60 { max-width: 60px; }
+    .hairline-40 { max-width: 40px; }
+    .is-hidden { display: none; }
+    .cta-glow {
+      background: radial-gradient(circle, rgba(201,169,97,0.3), transparent 60%);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+      .book,
+      .book:hover,
+      .book-hinge,
+      .book:hover .book-hinge { transition: none; transform: rotateY(-22deg) rotateX(4deg); }
+      .book-hinge,
+      .book:hover .book-hinge { transform: rotateY(0deg); }
+    }
+  </style>
+</head>
+<body class="bg-grain">
+
+  <!-- NAV -->
+  <header class="nav-blur fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold-400 shadow-[0_0_12px_#c9a961]"></span>
+        <span class="font-serif text-[1.05rem] tracking-wide text-white/90">Why Smart People Stay Broke</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-white/70">
+        <a href="#problem" class="hover:text-gold-300 transition">The Problem</a>
+        <a href="#insights" class="hover:text-gold-300 transition">Insights</a>
+        <a href="#book" class="hover:text-gold-300 transition">The Book</a>
+        <a href="#author" class="hover:text-gold-300 transition">Author</a>
+      </nav>
+      <a href="#get" class="btn-primary !py-2.5 !px-5 !text-sm">Get the Book</a>
+    </div>
+  </header>
+
+  <main id="top" class="relative z-10">
+
+    <!-- HERO -->
+    <section class="relative pt-36 md:pt-44 pb-24 md:pb-32">
+      <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div class="lg:col-span-7 reveal">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="eyebrow">A Book by Mohammad Javed</span>
+              <span class="hairline flex-1 max-w-[120px]"></span>
+            </div>
+
+            <h1 class="font-serif font-semibold leading-[1.02] tracking-tight text-[2.75rem] sm:text-6xl lg:text-[4.5rem] text-white">
+              Why Smart People<br/>
+              <span class="gold-gradient-text italic">Stay Broke</span>
+            </h1>
+
+            <p class="mt-6 font-serif italic text-xl md:text-2xl text-white/75 max-w-xl leading-snug">
+              From Degree to Dollars — Intelligence, Emotional Control, and the Missing Science of Wealth.
+            </p>
+
+            <div class="mt-10 pl-5 border-l border-gold-500/40">
+              <p class="font-serif text-2xl md:text-3xl leading-tight text-gold-100">
+                "Intelligence alone does not create wealth."
+              </p>
+            </div>
+
+            <p class="mt-8 text-white/65 max-w-xl leading-relaxed">
+              A rigorous examination of why educated, disciplined, and capable professionals remain financially constrained — and how financial freedom can be engineered through ownership, structure, and time.
+            </p>
+
+            <div class="mt-10 flex flex-wrap items-center gap-4">
+              <a href="#get" class="btn-primary">
+                Get the Book
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+              <a href="#book" class="btn-ghost">Read an Excerpt</a>
+            </div>
+
+            <div class="mt-12 flex items-center gap-6 text-sm text-white/50">
+              <div>
+                <div class="font-serif text-2xl text-white">15</div>
+                <div class="tracking-wider uppercase text-[0.7rem]">Chapters</div>
+              </div>
+              <div class="w-px h-10 bg-white/10"></div>
+              <div>
+                <div class="font-serif text-2xl text-white">6</div>
+                <div class="tracking-wider uppercase text-[0.7rem]">Parts</div>
+              </div>
+              <div class="w-px h-10 bg-white/10"></div>
+              <div>
+                <div class="font-serif text-2xl text-white">2026</div>
+                <div class="tracking-wider uppercase text-[0.7rem]">Edition</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 reveal">
+            <div class="flex justify-center lg:justify-end">
+              <!-- Book mockup -->
+              <div class="book-wrap">
+                <div class="book" aria-label="Book cover of Why Smart People Stay Broke">
+                  <div class="book-back" aria-hidden="true"></div>
+                  <div class="book-pages" aria-hidden="true"></div>
+                  <div class="book-hinge">
+                    <div class="cover">
+                      <div>
+                        <div class="eyebrow mb-3">Mohammad Javed</div>
+                        <div class="hairline hairline-60 mb-6"></div>
+                        <h3 class="font-serif text-white text-[1.7rem] leading-tight">Why Smart People Stay Broke</h3>
+                        <p class="font-serif italic text-gold-300 text-sm mt-3">From Degree to Dollars</p>
+                      </div>
+                      <div>
+                        <div class="hairline hairline-40 mb-3"></div>
+                        <p class="text-[0.65rem] tracking-widest-2 uppercase text-white/40">Intelligence · Ownership · Time</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline max-w-7xl mx-auto"></div>
+
+    <!-- PROBLEM -->
+    <section id="problem" class="py-24 md:py-32">
+      <div class="max-w-6xl mx-auto px-6 md:px-10">
+        <div class="reveal max-w-3xl">
+          <div class="eyebrow mb-5">The Contradiction</div>
+          <h2 class="font-serif text-4xl md:text-5xl leading-[1.1] text-white">
+            Some of the most financially anxious people<br class="hidden md:block"/>
+            are the <span class="italic gold-gradient-text">most intelligent.</span>
+          </h2>
+          <p class="mt-6 text-white/65 text-lg leading-relaxed">
+            Engineers, doctors, lawyers, analysts, and executives — people with strong discipline and respectable incomes — live paycheck to paycheck, dependent on employment, fearful of disruption. The problem is not a lack of intelligence. It is misdirected intelligence.
+          </p>
+        </div>
+
+        <div class="mt-16 grid md:grid-cols-2 gap-px bg-white/5 rounded-2xl overflow-hidden">
+          <div class="bg-ink-900 p-8 md:p-10 reveal">
+            <div class="flex items-start gap-5">
+              <span class="numeral text-3xl leading-none">01</span>
+              <div>
+                <h3 class="font-serif text-2xl text-white mb-2">High income is not wealth.</h3>
+                <p class="text-white/60 leading-relaxed">Income can disappear with illness, restructuring, or technological change. Wealth survives absence.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-ink-900 p-8 md:p-10 reveal">
+            <div class="flex items-start gap-5">
+              <span class="numeral text-3xl leading-none">02</span>
+              <div>
+                <h3 class="font-serif text-2xl text-white mb-2">Performance is rewarded. Ownership is not taught.</h3>
+                <p class="text-white/60 leading-relaxed">Education produces competent participants — not asset builders. It rewards compliance, not positioning.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-ink-900 p-8 md:p-10 reveal">
+            <div class="flex items-start gap-5">
+              <span class="numeral text-3xl leading-none">03</span>
+              <div>
+                <h3 class="font-serif text-2xl text-white mb-2">Security becomes the enemy of freedom.</h3>
+                <p class="text-white/60 leading-relaxed">The salary functions as psychological shelter. Over time, dependence feels rational and freedom feels reckless.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-ink-900 p-8 md:p-10 reveal">
+            <div class="flex items-start gap-5">
+              <span class="numeral text-3xl leading-none">04</span>
+              <div>
+                <h3 class="font-serif text-2xl text-white mb-2">Hard work does not scale. Structure does.</h3>
+                <p class="text-white/60 leading-relaxed">Effort improves performance but it cannot compound. Wealth grows through leverage, systems, and time.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-ink-900 p-8 md:p-10 md:col-span-2 reveal">
+            <div class="flex items-start gap-5">
+              <span class="numeral text-3xl leading-none">05</span>
+              <div>
+                <h3 class="font-serif text-2xl text-white mb-2">Smart people are playing the wrong game — extremely well.</h3>
+                <p class="text-white/60 leading-relaxed">They optimize execution without interrogating architecture. Intelligence must be redirected from earning to owning, from performance to positioning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE INSIGHTS -->
+    <section id="insights" class="py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="reveal text-center max-w-3xl mx-auto">
+          <div class="eyebrow mb-5">Four Structural Shifts</div>
+          <h2 class="font-serif text-4xl md:text-5xl leading-[1.1] text-white">
+            The distinctions that separate<br class="hidden md:block"/>
+            <span class="italic gold-gradient-text">dependence from freedom.</span>
+          </h2>
+          <p class="mt-6 text-white/60 text-lg leading-relaxed">
+            Four fundamental reframings that move intelligence from the wrong game to the right one.
+          </p>
+        </div>
+
+        <div class="mt-16 grid md:grid-cols-2 gap-6 lg:gap-8">
+          <article class="card p-8 md:p-10 reveal">
+            <div class="flex items-center justify-between mb-6">
+              <span class="eyebrow">Shift 01</span>
+              <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-serif text-3xl text-white mb-4">Intelligence <span class="text-gold-400 italic">vs.</span> Financial Intelligence</h3>
+            <p class="text-white/60 leading-relaxed">
+              Intelligence is trained for obedience inside systems. Financial intelligence questions the system itself — how value flows, where profit settles, and who captures surplus.
+            </p>
+          </article>
+
+          <article class="card p-8 md:p-10 reveal">
+            <div class="flex items-center justify-between mb-6">
+              <span class="eyebrow">Shift 02</span>
+              <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l4-4 4 4 5-5"/></svg>
+            </div>
+            <h3 class="font-serif text-3xl text-white mb-4">Income <span class="text-gold-400 italic">vs.</span> Assets</h3>
+            <p class="text-white/60 leading-relaxed">
+              Income is activity-dependent and has a ceiling. Assets are independence-dependent and compound through time. The division quietly determines every financial destiny.
+            </p>
+          </article>
+
+          <article class="card p-8 md:p-10 reveal">
+            <div class="flex items-center justify-between mb-6">
+              <span class="eyebrow">Shift 03</span>
+              <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m6-6V9a6 6 0 10-12 0v2m-1 0h14a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1v-7a1 1 0 011-1z"/></svg>
+            </div>
+            <h3 class="font-serif text-3xl text-white mb-4">Security <span class="text-gold-400 italic">vs.</span> Freedom</h3>
+            <p class="text-white/60 leading-relaxed">
+              Security provides predictability and social approval. Freedom demands delayed gratification and controlled uncertainty. Most intelligent people choose security repeatedly — and never begin.
+            </p>
+          </article>
+
+          <article class="card p-8 md:p-10 reveal">
+            <div class="flex items-center justify-between mb-6">
+              <span class="eyebrow">Shift 04</span>
+              <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-serif text-3xl text-white mb-4">Effort <span class="text-gold-400 italic">vs.</span> Leverage</h3>
+            <p class="text-white/60 leading-relaxed">
+              Effort answers: "How can I earn more?" Leverage answers: "How can value continue without me?" Capital, systems, and ownership multiply what stamina never can.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PULL QUOTE -->
+    <section class="py-20 md:py-28 relative">
+      <div class="max-w-4xl mx-auto px-6 md:px-10 text-center reveal">
+        <svg class="w-10 h-10 mx-auto text-gold-500/60 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9.17 6C5.81 6 3 8.79 3 12.18 3 15.57 5.81 18 9.17 18V15c-1.73 0-3.17-1.28-3.17-2.82C6 10.63 7.44 9 9.17 9V6zm11 0C16.81 6 14 8.79 14 12.18c0 3.39 2.81 5.82 6.17 5.82V15c-1.73 0-3.17-1.28-3.17-2.82 0-1.55 1.44-3.18 3.17-3.18V6z"/></svg>
+        <blockquote class="pull text-3xl md:text-5xl leading-tight">
+          Financial freedom belongs to those who understand structure, control, and time — not merely those with money.
+        </blockquote>
+        <div class="hairline max-w-xs mx-auto mt-10"></div>
+        <p class="mt-6 text-gold-400 tracking-widest-2 uppercase text-xs">— From Chapter Ten</p>
+      </div>
+    </section>
+
+    <!-- ABOUT THE BOOK -->
+    <section id="book" class="py-24 md:py-32">
+      <div class="max-w-6xl mx-auto px-6 md:px-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-5 reveal">
+            <div class="eyebrow mb-5">About the Book</div>
+            <h2 class="font-serif text-4xl md:text-5xl leading-[1.1] text-white">
+              An intellectual correction —<br/>
+              not a motivational script.
+            </h2>
+          </div>
+
+          <div class="lg:col-span-7 reveal">
+            <p class="text-white/70 text-lg leading-relaxed">
+              <span class="font-serif italic text-gold-100">Why Smart People Stay Broke</span> integrates economics, behavioral psychology, systems thinking, and historical observation to examine a structural contradiction of the modern world: why intelligence, education, and effort no longer guarantee financial freedom.
+            </p>
+            <p class="mt-5 text-white/60 leading-relaxed">
+              Written for thinkers rather than speculators, the book reframes success through economic roles, ownership positioning, and emotional endurance. It argues that financial outcomes are primarily determined by structural positioning and emotional discipline over time — rather than intelligence or effort alone.
+            </p>
+
+            <div class="mt-10 grid sm:grid-cols-3 gap-6">
+              <div class="p-6 rounded-xl border border-white/5 bg-white/[0.015]">
+                <div class="text-gold-400 mb-3">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+                </div>
+                <h4 class="font-serif text-lg text-white mb-1">Systems Thinking</h4>
+                <p class="text-sm text-white/55">Positioning over performance.</p>
+              </div>
+              <div class="p-6 rounded-xl border border-white/5 bg-white/[0.015]">
+                <div class="text-gold-400 mb-3">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 6v4l3 2"/></svg>
+                </div>
+                <h4 class="font-serif text-lg text-white mb-1">Behavioral Psychology</h4>
+                <p class="text-sm text-white/55">Fear, comfort, and the salary addiction.</p>
+              </div>
+              <div class="p-6 rounded-xl border border-white/5 bg-white/[0.015]">
+                <div class="text-gold-400 mb-3">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 9h6M9 13h6M9 17h6"/></svg>
+                </div>
+                <h4 class="font-serif text-lg text-white mb-1">Economic Roles</h4>
+                <p class="text-sm text-white/55">Why some positions compound.</p>
+              </div>
+            </div>
+
+            <div class="mt-10 pl-5 border-l border-gold-500/30">
+              <p class="font-serif italic text-gold-100/90 leading-relaxed">
+                "This book invites the reader to think slowly, patiently, and structurally — because financial freedom is not achieved quickly, but it is understood clearly."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTHOR -->
+    <section id="author" class="py-24 md:py-32 relative">
+      <div class="max-w-4xl mx-auto px-6 md:px-10 text-center">
+        <div class="reveal">
+          <!-- Ornamental monogram -->
+          <div class="mb-10 flex justify-center">
+            <div class="relative">
+              <div class="w-28 h-28 rounded-full border border-gold-500/30 flex items-center justify-center bg-white/[0.015]">
+                <span class="font-serif italic text-5xl gold-gradient-text leading-none">MJ</span>
+              </div>
+              <div class="absolute inset-0 rounded-full border border-gold-500/10 scale-125 pointer-events-none"></div>
+            </div>
+          </div>
+
+          <div class="eyebrow mb-5">The Author</div>
+          <h2 class="font-serif text-4xl md:text-5xl leading-[1.05] text-white">
+            Mohammad <span class="gold-gradient-text italic">Javed</span>
+          </h2>
+          <p class="mt-4 text-gold-400 font-medium text-sm tracking-wide">Independent Thinker · Financial Systems Analyst · Structural Wealth Strategist</p>
+
+          <div class="hairline my-10 max-w-xs mx-auto"></div>
+
+          <div class="text-left max-w-2xl mx-auto">
+            <p class="text-white/70 text-lg leading-relaxed">
+              Beginning from modest circumstances without inherited capital or financial advantage, Mohammad Javed built financial independence through disciplined study of asset structures, ownership models, and long-term economic positioning.
+            </p>
+            <p class="mt-5 text-white/60 leading-relaxed">
+              His transformation was not driven by speculation or shortcuts, but by systematic understanding of how wealth is structurally created and preserved. His writing integrates insights from economics, behavioral psychology, systems theory, and real-world wealth architecture — offering a calm, rigorous framework rather than motivational fluff.
+            </p>
+            <p class="mt-5 text-white/60 leading-relaxed">
+              He writes for thinkers, professionals, and disciplined individuals ready to transition from earning to owning — and from effort to structure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARABLE POSITIONING -->
+    <section class="py-24 md:py-32">
+      <div class="max-w-5xl mx-auto px-6 md:px-10 text-center">
+        <div class="reveal">
+          <div class="eyebrow mb-5">Intellectual Company</div>
+          <h2 class="font-serif text-3xl md:text-4xl text-white leading-tight">For the readers of</h2>
+        </div>
+
+        <div class="mt-14 grid md:grid-cols-3 gap-6 md:gap-8">
+          <div class="card p-8 reveal">
+            <p class="text-gold-400 text-xs tracking-widest-2 uppercase mb-3">Morgan Housel</p>
+            <h3 class="font-serif text-2xl text-white leading-tight">The Psychology of Money</h3>
+            <div class="hairline my-5 max-w-[40px] mx-auto"></div>
+            <p class="text-sm text-white/55">Mindset focus</p>
+          </div>
+          <div class="card p-8 reveal">
+            <p class="text-gold-400 text-xs tracking-widest-2 uppercase mb-3">Daniel Kahneman</p>
+            <h3 class="font-serif text-2xl text-white leading-tight">Thinking, Fast and Slow</h3>
+            <div class="hairline my-5 max-w-[40px] mx-auto"></div>
+            <p class="text-sm text-white/55">Behavioral foundations</p>
+          </div>
+          <div class="card p-8 reveal">
+            <p class="text-gold-400 text-xs tracking-widest-2 uppercase mb-3">Charlie Munger</p>
+            <h3 class="font-serif text-2xl text-white leading-tight">Poor Charlie's Almanack</h3>
+            <div class="hairline my-5 max-w-[40px] mx-auto"></div>
+            <p class="text-sm text-white/55">Long-term thinking</p>
+          </div>
+        </div>
+
+        <p class="mt-12 text-white/50 text-sm max-w-xl mx-auto reveal">
+          Positioned alongside these works, but analytically distinct — focused on economic roles, ownership positioning, and emotional endurance.
+        </p>
+      </div>
+    </section>
+
+    <!-- KEY TAKEAWAYS -->
+    <section class="py-24 md:py-32">
+      <div class="max-w-6xl mx-auto px-6 md:px-10">
+        <div class="reveal max-w-3xl">
+          <div class="eyebrow mb-5">Key Takeaways</div>
+          <h2 class="font-serif text-4xl md:text-5xl leading-[1.05] text-white">
+            Principles that <span class="italic gold-gradient-text">outlast</span> every market cycle.
+          </h2>
+        </div>
+
+        <div class="mt-16 space-y-px bg-white/5 rounded-2xl overflow-hidden">
+          <div class="bg-ink-900 px-8 md:px-12 py-8 md:py-10 flex items-start gap-6 group hover:bg-ink-800 transition reveal">
+            <span class="numeral text-4xl md:text-5xl leading-none mt-1 group-hover:text-gold-400 transition">I.</span>
+            <div>
+              <h3 class="font-serif text-2xl md:text-3xl text-white leading-tight">Income is temporary. Assets are permanent.</h3>
+              <p class="mt-3 text-white/55">An asset is anything that produces value without requiring your continuous labor.</p>
+            </div>
+          </div>
+          <div class="bg-ink-900 px-8 md:px-12 py-8 md:py-10 flex items-start gap-6 group hover:bg-ink-800 transition reveal">
+            <span class="numeral text-4xl md:text-5xl leading-none mt-1 group-hover:text-gold-400 transition">II.</span>
+            <div>
+              <h3 class="font-serif text-2xl md:text-3xl text-white leading-tight">Security is often the enemy of freedom.</h3>
+              <p class="mt-3 text-white/55">The salary becomes emotional shelter — and shelter carries hidden costs that compound over decades.</p>
+            </div>
+          </div>
+          <div class="bg-ink-900 px-8 md:px-12 py-8 md:py-10 flex items-start gap-6 group hover:bg-ink-800 transition reveal">
+            <span class="numeral text-4xl md:text-5xl leading-none mt-1 group-hover:text-gold-400 transition">III.</span>
+            <div>
+              <h3 class="font-serif text-2xl md:text-3xl text-white leading-tight">Effort does not scale. Systems do.</h3>
+              <p class="mt-3 text-white/55">Hard work creates value; wealth accumulates where claims on value exist.</p>
+            </div>
+          </div>
+          <div class="bg-ink-900 px-8 md:px-12 py-8 md:py-10 flex items-start gap-6 group hover:bg-ink-800 transition reveal">
+            <span class="numeral text-4xl md:text-5xl leading-none mt-1 group-hover:text-gold-400 transition">IV.</span>
+            <div>
+              <h3 class="font-serif text-2xl md:text-3xl text-white leading-tight">Capital follows position — not the other way around.</h3>
+              <p class="mt-3 text-white/55">Money is abundant. Competent control is rare. Position before capital.</p>
+            </div>
+          </div>
+          <div class="bg-ink-900 px-8 md:px-12 py-8 md:py-10 flex items-start gap-6 group hover:bg-ink-800 transition reveal">
+            <span class="numeral text-4xl md:text-5xl leading-none mt-1 group-hover:text-gold-400 transition">V.</span>
+            <div>
+              <h3 class="font-serif text-2xl md:text-3xl text-white leading-tight">Freedom is designed, not discovered.</h3>
+              <p class="mt-3 text-white/55">Financial freedom is not luck or genius. It is the outcome of positioning, emotion, patience, and coherent design.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAUNCH / READERS -->
+    <section id="readers" class="py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="reveal text-center max-w-2xl mx-auto">
+          <div class="eyebrow mb-5">In the World</div>
+          <h2 class="font-serif text-4xl md:text-5xl leading-[1.05] text-white">
+            Meeting <span class="italic gold-gradient-text">readers.</span>
+          </h2>
+          <p class="mt-6 text-white/60 text-lg leading-relaxed">
+            Moments from recent gatherings around the release of <span class="font-serif italic text-white/80">Why Smart People Stay Broke</span>.
+          </p>
+          <div class="hairline max-w-[80px] mx-auto mt-8"></div>
+        </div>
+
+        <div class="mt-16 grid md:grid-cols-2 gap-6 lg:gap-10 max-w-5xl mx-auto">
+          <figure class="reveal group">
+            <div class="portrait-rect aspect-[4/5] overflow-hidden">
+              <div class="inner w-full h-full relative">
+                <img src="images/launch-1.png" alt="Mohammad Javed with readers holding copies of Why Smart People Stay Broke" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" onerror="this.classList.add('is-hidden'); this.nextElementSibling.classList.remove('is-hidden');" />
+                <div class="img-placeholder is-hidden">Launch Photograph</div>
+                <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-ink-950/30 via-transparent to-transparent"></div>
+              </div>
+            </div>
+            <figcaption class="mt-5 text-center text-sm text-white/50 font-serif italic">
+              With readers at a recent gathering.
+            </figcaption>
+          </figure>
+
+          <figure class="reveal group">
+            <div class="portrait-rect aspect-[4/5] overflow-hidden">
+              <div class="inner w-full h-full relative">
+                <img src="images/launch-2.png" alt="Mohammad Javed with readers holding copies of Why Smart People Stay Broke" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" onerror="this.classList.add('is-hidden'); this.nextElementSibling.classList.remove('is-hidden');" />
+                <div class="img-placeholder is-hidden">Launch Photograph</div>
+                <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-ink-950/30 via-transparent to-transparent"></div>
+              </div>
+            </div>
+            <figcaption class="mt-5 text-center text-sm text-white/50 font-serif italic">
+              The book in the hands of its first readers.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="get" class="py-24 md:py-36 relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="cta-glow absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full blur-3xl opacity-30"></div>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-6 md:px-10 text-center relative reveal">
+        <div class="eyebrow mb-6">Begin the Transition</div>
+        <h2 class="font-serif text-4xl md:text-6xl leading-[1.05] text-white">
+          Stop playing the<br/>
+          <span class="italic gold-gradient-text">wrong game</span> well.
+        </h2>
+        <p class="mt-8 text-white/65 text-lg leading-relaxed max-w-xl mx-auto">
+          Redirect your intelligence from performance to positioning, from earning to owning, from comfort to controlled uncertainty.
+        </p>
+
+        <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:whysmartpeoplestaybroke@gmail.com?subject=Interested%20in%20the%20book" class="btn-primary">
+            Get the Book
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <a href="mailto:whysmartpeoplestaybroke@gmail.com" class="btn-ghost">Contact the Author</a>
+        </div>
+
+        <div class="mt-16 max-w-md mx-auto">
+          <div class="hairline mb-8"></div>
+          <p class="text-sm text-white/50 mb-5 tracking-wide">Or receive new essays and release updates</p>
+          <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thank you'; this.querySelector('input').value='';" class="flex flex-col sm:flex-row gap-3">
+            <input type="email" required placeholder="your@email.com" class="email-input" aria-label="Email address" />
+            <button type="submit" class="btn-primary whitespace-nowrap !py-3">Subscribe</button>
+          </form>
+          <p class="mt-4 text-xs text-white/30">No promotions. Only quiet essays on structure, ownership, and time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 py-12">
+      <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+          <span class="font-serif text-white/80">Why Smart People Stay Broke</span>
+          <span class="text-white/30 text-sm">· Mohammad Javed</span>
+        </div>
+        <div class="flex items-center gap-6 text-xs text-white/40 tracking-wider uppercase">
+          <a href="mailto:whysmartpeoplestaybroke@gmail.com" class="hover:text-gold-300 transition">Contact</a>
+          <span>© 2026 Mohammad Javed</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
