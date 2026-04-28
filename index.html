@@ -648,6 +648,63 @@
       }
     }
 
+    /* —— Launch Gallery —— */
+    .launch-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .launch-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+    }
+
+    .launch-gallery__item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      background: var(--color-bg-surface);
+    }
+
+    .launch-gallery__item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 22, 40, 0.55) 0%, transparent 40%);
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .launch-gallery__item:hover::after {
+      opacity: 0.3;
+    }
+
+    .launch-gallery__img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+      transition: transform 0.5s ease;
+    }
+
+    .launch-gallery__item:hover .launch-gallery__img {
+      transform: scale(1.03);
+    }
+
+    .launch-caption {
+      text-align: center;
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      font-style: italic;
+    }
+
     .footer-min {
       border-top: 1px solid var(--color-border);
       padding: 2rem 1rem;
@@ -768,7 +825,7 @@
     <!-- Section: What You'll Learn -->
     <section id="about-book" class="section container reveal">
       <h2 class="section-heading">What You&apos;ll Learn</h2>
-      <p class="body-muted max-w-3xl" style="margin-bottom: 2rem;">Smart people stack degrees and good jobs, yet stay
+      <p class="body-muted max-w-3xl mb-8">Smart people stack degrees and good jobs, yet stay
         financially stuck — because the playbook they learned rewards employment, not ownership. This book breaks down
         why that happens and what to do instead.</p>
       <div class="learn-grid">
@@ -853,6 +910,26 @@
       </p>
     </section>
 
+    <!-- Section: Book Launch Gallery -->
+    <section id="launch" class="section section--secondary reveal">
+      <div class="container">
+        <h2 class="section-heading">Book Launch Highlights</h2>
+        <p class="body-muted max-w-3xl mb-2">Celebrating the launch of <em>Why Smart People Stay Broke</em> — thank you to everyone who came out and supported the journey.</p>
+        <div class="launch-gallery">
+          <div class="launch-gallery__item">
+            <img class="launch-gallery__img" src="images/launch-1.png"
+              alt="Book launch event — Mohammad Javed with supporters holding copies of Why Smart People Stay Broke"
+              width="800" height="1000" loading="lazy" />
+          </div>
+          <div class="launch-gallery__item">
+            <img class="launch-gallery__img" src="images/launch-2.png"
+              alt="Book launch event — Mohammad Javed with attendees and copies of Why Smart People Stay Broke"
+              width="800" height="1000" loading="lazy" />
+          </div>
+        </div>
+        <p class="launch-caption">From the official book launch event — Spring 2026</p>
+      </div>
+    </section>
 
     <!-- Section 8: Author -->
     <section id="author" class="section container reveal">
