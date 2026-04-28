@@ -1,0 +1,2 @@
+# Redirect Netlify subdomain to custom domain
+https://*.netlify.app/* https://whysmartpeoplestaybroke.com/:splat 301!
