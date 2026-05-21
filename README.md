@@ -8,6 +8,8 @@ Static marketing site for **Why Smart People Stay Broke: From Degree to Dollars 
 |------|--------|
 | `index.html` | Full page: cover-matched CSS variables, responsive layout, mobile hamburger nav, meta/OG tags, Amazon CTAs |
 | `DOMAIN-SETUP.md` | Step-by-step Netlify + DNS instructions for `whysmartpeoplestaybroke.com` |
+| `netlify.toml` | Publish root `.` — Netlify parses `index.html` at deploy for Forms |
+| `_redirects` | Redirect Netlify subdomain to custom domain |
 | `images/` | Book cover (`book-cover.png`) and optional author photo — see `images/README.md` |
 | `LICENSE` | MIT License (Copyright © 2026 Ilmacademy) |
 
@@ -50,6 +52,17 @@ Upload the folder to any static host (GitHub Pages, Netlify, Vercel, etc.) with 
 ## Custom domain (Netlify)
 
 See [DOMAIN-SETUP.md](DOMAIN-SETUP.md) for DNS and HTTPS steps.
+
+## Netlify Forms (email signup)
+
+The “Get the First Chapter Free” form posts to **[Netlify Forms](https://docs.netlify.com/forms/setup/)** as **`chapter-signup`** (`data-netlify="true"` in `index.html`). After enabling Forms in Netlify:
+
+1. **Deploy** — push or trigger **Deploy site** so Netlify re-parses `index.html` and registers **`chapter-signup`**.
+2. Verify **Forms** in the dashboard lists **`chapter-signup`** with submissions stored there.
+3. **Test only on production** (`https://whysmartpeoplestaybroke.com` or your `*.netlify.app` URL), not `file://`.
+4. **Notifications** — **Site configuration → Forms → Form notifications** to email / Slack / webhook when a submission arrives.
+
+Spam control: honeypot field **`bot-field`** is wired via **`netlify-honeypot="bot-field"`** on the form.
 
 ## License
 

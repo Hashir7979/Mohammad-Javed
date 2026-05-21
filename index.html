@@ -804,8 +804,11 @@
       <div class="container max-w-xl mx-auto text-center px-0">
         <h2 class="section-heading">Get the First Chapter Free</h2>
         <p class="body-muted mb-8">Plus weekly insights on building real wealth — no hype, no fluff.</p>
-        <form id="chapter-form" class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center" name="chapter-signup" method="POST" data-netlify="true" novalidate>
+        <form id="chapter-form" class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center" name="chapter-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
           <input type="hidden" name="form-name" value="chapter-signup" />
+          <p class="sr-only">
+            <label for="chapter-form-bot-field">Leave blank:</label>
+            <input id="chapter-form-bot-field" name="bot-field" type="text" tabindex="-1" autocomplete="off" /></p>
           <label class="sr-only" for="email-input">Email address</label>
           <input id="email-input" class="email-field flex-1" type="email" name="email" required autocomplete="email"
             placeholder="your@email.com" />
@@ -1122,9 +1125,12 @@
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(new FormData(form)).toString()
+          body: new URLSearchParams(new FormData(form)).toString(),
         })
-        .then(() => {
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Form submission failed: ${response.status}`);
+          }
           input.value = '';
           if (statusEl) {
             statusEl.textContent = 'Thank you — check your inbox soon.';
